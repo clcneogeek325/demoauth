@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo authentificacion</title>
+</head>
+<body>
+        {% if user.is_authenticated  %}
+        <h1>Bienvendo {{ user.username  }}</h1>
+        <h1><a href="{% url  'account_logout'  %}">Cerrar session</a></h1>
+        {% else %}
+        <h1>Usted necesita logerarse </h1>
+        <h1><a href="{% url  'account_login'  %}">Iniciar session</a></h1>
+        {% endif %}
+</body>
+</html>
